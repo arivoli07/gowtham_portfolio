@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import svgPaths from "../../imports/svg-8e9tgyntso";
 import { imgRectangle6 } from "../../imports/svg-wxgwf";
 import imgFrame58 from "/src/assets/57e2221906d547fa2080873389d5cdb526033110.png";
@@ -15,10 +14,29 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, image, onClick }: ServiceCardProps) {
   return (
-    <div className="group relative shrink-0 w-[416px] h-[508px] cursor-pointer" onClick={onClick}>
+    <div className="group relative shrink-0 w-[calc(100vw-72px)] max-w-[416px] h-[508px] cursor-pointer" onClick={onClick}>
+      {/* Mobile Card Shell */}
+      <div className="absolute inset-0 md:hidden rounded-[35px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.16)_0%,rgba(30,30,30,0.78)_100%)] backdrop-blur-[7px]">
+        <div className="px-8 pt-10">
+          <p className="font-['Poppins'] font-medium text-[32px] leading-none text-white tracking-[-0.48px] m-0">
+            {title}
+          </p>
+        </div>
+        <div className="mt-7 h-px w-full bg-white/35" />
+      </div>
+
+      {/* Mobile Layered Image */}
+      <div className="absolute md:hidden left-1/2 -translate-x-1/2 top-[162px] w-[91%] pointer-events-none">
+        <div className="mx-auto h-[30px] w-[80%] rounded-t-[30px] bg-[#9ea0a4]/60" />
+        <div className="mx-auto -mt-2 h-[34px] w-[92%] rounded-t-[32px] bg-[#8d8f94]/75" />
+        <div className="-mt-2 h-[250px] w-full overflow-hidden rounded-[34px]">
+          <img alt={title} className="size-full object-cover" src={image} />
+        </div>
+      </div>
+
       {/* Background Mask Container with Glass Effect */}
       <div 
-        className="absolute inset-0 w-full h-full backdrop-blur-[15px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2"
+        className="absolute inset-0 w-full h-full backdrop-blur-[15px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2 hidden md:block"
         style={{ 
           maskImage: `url('${imgRectangle6}')`,
           WebkitMaskImage: `url('${imgRectangle6}')`,
@@ -42,7 +60,7 @@ function ServiceCard({ title, image, onClick }: ServiceCardProps) {
 
       {/* Layered Images */}
       <div 
-        className="absolute flex flex-col items-center left-0 top-[158px] pb-[307px] w-full pointer-events-none"
+        className="absolute hidden md:flex flex-col items-center left-0 top-[158px] pb-[307px] w-full pointer-events-none"
         style={{ 
           maskImage: `url('${imgRectangle6}')`,
           WebkitMaskImage: `url('${imgRectangle6}')`,
@@ -63,7 +81,7 @@ function ServiceCard({ title, image, onClick }: ServiceCardProps) {
 
       {/* Text Section */}
       <div 
-        className="absolute flex flex-col gap-[23px] items-start left-0 top-[44px] w-full pointer-events-none transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2"
+        className="absolute hidden md:flex flex-col gap-[23px] items-start left-0 top-[44px] w-full pointer-events-none transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2"
         style={{ 
           maskImage: `url('${imgRectangle6}')`,
           WebkitMaskImage: `url('${imgRectangle6}')`,
@@ -90,7 +108,7 @@ function ServiceCard({ title, image, onClick }: ServiceCardProps) {
       </div>
 
       {/* Floating Arrow Button */}
-      <div className="absolute flex items-center justify-center left-[302px] size-[114px] top-[394px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-4 group-hover:translate-x-2">
+      <div className="absolute hidden md:flex items-center justify-center right-0 size-[114px] top-[394px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-4 group-hover:translate-x-2">
         <div className="bg-[#1d2939] content-stretch flex items-center justify-center p-[21px] relative rounded-[57px] size-[114px] transition-colors duration-500 group-hover:bg-[#fd853a]">
           <div className="flex flex-[1_0_0] h-full items-center justify-center relative">
             <div className="size-[44px] transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">
@@ -99,6 +117,15 @@ function ServiceCard({ title, image, onClick }: ServiceCardProps) {
               </svg>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Arrow */}
+      <div className="absolute md:hidden bottom-4 right-[-4px] flex items-center justify-center size-[104px]">
+        <div className="bg-[#162847] flex items-center justify-center rounded-full size-[104px]">
+          <svg className="block size-[40px]" fill="none" viewBox="0 0 34 34">
+            <path d="M2 32L32 2M32 2H2M32 2V32" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" />
+          </svg>
         </div>
       </div>
     </div>
@@ -154,7 +181,7 @@ export function ServicesSection() {
           </div>
 
           {/* Cards Area */}
-          <div className="xl:absolute flex flex-col xl:flex-row gap-[20px] xl:gap-[10px] items-center justify-center xl:justify-start xl:left-[70px] xl:top-[282px] mt-12 xl:mt-0 pb-10 xl:pb-0 px-4 xl:px-0 z-20">
+          <div className="xl:absolute flex flex-col xl:flex-row gap-[20px] xl:gap-[10px] items-center justify-center xl:justify-start xl:left-[70px] xl:top-[282px] mt-12 xl:mt-0 pb-10 xl:pb-0 px-6 xl:px-0 z-20">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index} 

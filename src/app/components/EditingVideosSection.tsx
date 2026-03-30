@@ -71,13 +71,13 @@ export function EditingVideosSection() {
   };
 
   const videos = [
-    { title: "Showreel", imageSrc: imgFrame371, link: "https://youtu.be/nmSpGlVawJc?si=OApg4a6U_x7fK-8q" },
-    { title: "Samples", imageSrc: imgFrame373, link: "https://youtu.be/xwrm1iN62U0?si=CgPdL5lS5sa1eLI6" },
-    { title: "Samples", imageSrc: imgFrame375 },
-    { title: "Card Animation", imageSrc: imgFrame372, link: "https://youtu.be/FxegnXg2dAE?si=ALpMEPLd6KVqcdZp" },
-    { title: "Samples", imageSrc: imgFrame374 },
-    { title: "Samples", imageSrc: imgFrame377, link: "https://youtu.be/nmSpGlVawJc?si=OApg4a6U_x7fK-8q" },
-    { title: "Logo Animation", imageSrc: imgFrame376 }
+    { title: "Showreel", imageSrc: imgFrame371, link: "https://drive.google.com/file/d/1Bgwd_XFZ7PUoFhziqnm81O8-SnVXW_R1/preview" },
+    { title: "Samples", imageSrc: imgFrame373, link: "https://drive.google.com/file/d/1VdAbMH9I5s7b5XS3n8tK00ICawA0MOYk/preview" },
+    { title: "Samples", imageSrc: imgFrame375, link: "https://drive.google.com/file/d/1_et2l8jsX_8cW0xQcfUSI-a4hF_lyyKc/preview" },
+    { title: "Card Animation", imageSrc: imgFrame372, link: "https://drive.google.com/file/d/1ae2uUT_dPIQrh8VZW6web1d4rTshkJCb/preview" },
+    { title: "Samples", imageSrc: imgFrame374, link: "https://drive.google.com/file/d/1sRZyPILkXHh12UdpJY8h_lhBMTK_fVOt/preview" },
+    { title: "Samples", imageSrc: imgFrame377, link: "https://drive.google.com/file/d/1VgHJpqEwmSwYsRHB-2MTyRfpzKMzGG1M/preview" },
+    { title: "Logo Animation", imageSrc: imgFrame376, link: "https://drive.google.com/file/d/1NuOo2LaknXg9mHgqj6tX1_gj0DsyKiF5/preview" }
   ];
 
   return (
